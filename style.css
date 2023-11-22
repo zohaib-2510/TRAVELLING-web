@@ -1,0 +1,324 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+width: 100%;
+min-height: 100vh;
+background-image: url("./background.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 700;
+    user-select: none;
+}
+.navigation a{
+position: relative;
+font-size: 1.1rem;
+color: #fff;
+text-decoration: none;
+font-weight: 600;
+margin-left: 40px;
+}
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 650;
+margin-left: 40px;
+transition: all .5s ease-in-out;
+}
+
+.navigation .btnLogin-popup:hover{
+    background-color: #fff;
+    color: black;
+}
+.navigation a{
+transition: 1.2s;
+}
+.navigation a::after{
+content: "";
+position: absolute;
+width: 0%;
+height: 2.7px;
+background-color: #fff;
+left: 0;
+bottom: -4px;
+transition: ease .43s;
+}
+.navigation a:hover::after{
+width: 100%;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    backdrop-filter: blur(20px);
+border-radius: 20px;
+box-shadow: 0 0 309px rgba(0,0,0,.5);
+display: flex;
+justify-content: center;
+margin-left: 7.9px;
+overflow: hidden;
+margin-right: 7.9px;
+padding: 5px;
+align-items: center;
+transition: transform .5s ease , height .20s ease;
+transform: scale(0);
+}
+.mnx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.wrapper .form-box{
+    width: 100%;
+padding: 20px;
+}
+.form-box h2{
+    font-size: 2em;
+    text-align: center;
+    color: #162938;
+    font-weight: 700;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+  border-bottom: 2px solid #162938;
+  margin: 30px 0;
+  background-color: transparent;
+}
+.input-box label{
+    position: absolute;
+    top: 100%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #162938;
+    font-weight: 550;
+    transition: .5s;
+    pointer-events: none;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+background: transparent;
+    border: none;
+    outline: none;
+    color: #162938;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 57px;
+}
+.input-box input[type="email"]:not(:placeholder-shown)~label,.input-box input[type="text"]:not(:placeholder-shown)~label,.input-box input[type="password"]:not(:placeholder-shown)~label{
+    top: -5px;
+} 
+.remember-forget{
+    font-size: 17px;
+    color: #162938;
+    font-weight: 700;
+margin: -12px 0 22px;
+display: flex;
+justify-content: space-between;
+}
+.remember-forget label input{
+    accent-color: #06416e;
+    margin: 3px;
+}
+.remember-forget a{
+    color: #06416e;
+text-decoration: none;
+}
+.remember-forget .register-link,login-link:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background-color: #06416e;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+}
+.login-register {
+font-size: .9rem;
+color: #162938;
+text-align: center;
+font-weight: 600;
+margin: 25px 0 10px;
+display: flex;
+text-align: center;
+justify-content: space-between;
+}
+.login-register p,a{
+    color: #162938;
+    text-decoration: none;
+    font-weight: 650;
+    padding: 5px;
+}
+.login-register p,a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+height: 45px;
+background-color: #16476d;
+font-size: 2em;
+color: #fff;
+font-weight: 800;
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom-left-radius: 20px;
+cursor: pointer;
+z-index: 1;
+}
+.wrapper .form-box.login{
+transition:  transform .18s ease;
+transform: translateX(0);
+}
+.wrapper .form-box.register{
+transform: translateX(470px);
+ transition: none;
+ position: absolute;
+}
+.wrapper.active-popup{
+transform: scale(1);
+}
+.wrapper.active .form-box.login{
+ transition: none;
+transform: translateX(-400px);
+}
+.wrapper.active .form-box.login{
+ transition: none;
+transform: translateX(-400px);
+}
+.wrapper.active .form-box.register{
+transition: transform .18s ease;
+    transform: translateX(0);
+}
+@media (max-width:1200px) {
+    .navigation{
+        display: none;
+    }
+   header .gridicon{
+        display: block; 
+        /* visibility: visible; */
+    }
+   .kio .dropdown_menu {
+display: block;
+    }
+    .navigation{
+        display: none;
+    }
+}
+#iconm{
+    font-size: 28.8px;
+    padding-top: 10px;
+    color: white;
+    cursor: pointer;
+}
+.gridicon{
+/* visibility: hidden; */
+display: none;
+height: 50px;
+}
+.dropdown_menu{
+    position: absolute;
+    right: 2rem;
+margin: auto;
+top: 60px;
+height: 0px;
+display: none;
+
+    width: 300px;
+    background: rgba(255,255,255,.5);
+    backdrop-filter: blur(19px);
+    border-radius: 10px;
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+.open{
+    height: 350px;
+    padding: 40px 0 10px 0px;
+}
+.dropdown_menu a{
+    display: flex;
+    justify-content: center
+}
+#hh{
+    width: 90%;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 650;
+transition: all .5s ease-in-out;
+}
+#hh:hover{
+    background-color: #fff;
+    color: black;
+}
+.btnnnn
+{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
